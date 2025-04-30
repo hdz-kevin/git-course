@@ -25,7 +25,7 @@ const getCommentsForEachPost = async (posts) => {
 
 const renderHtml = (user, posts) => {
     const content = document.getElementById('content');
-    content.innerHTML += `<h3>Posts del usuario ${user.email}</h3>`;
+    content.innerHTML += `<h3>Posts del usuario ${user.email} (${posts.length} posts).</h3>`;
 
     posts.forEach(post => {
         content.innerHTML += `
@@ -33,6 +33,7 @@ const renderHtml = (user, posts) => {
         <h4>${post.title}</h4>
         <p>${post.body}</p>
         <br>
+        ${post.comments.length} comentarios:
         ${post.comments.map(c => `<p><span>${c.email}:</span>${c.body}</p>`).join('')}
       </div>
       `;
