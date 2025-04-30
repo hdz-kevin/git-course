@@ -33,6 +33,7 @@ const renderHtml = (user, posts) => {
         <h4>${post.title}</h4>
         <p>${post.body}</p>
         <br>
+        ${post.comments.length} comentarios:
         ${post.comments.map(c => `<p><span>${c.email}:</span>${c.body}</p>`).join('')}
       </div>
       `;
